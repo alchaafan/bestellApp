@@ -1,6 +1,6 @@
 function getFoodTemplates(i) {
     return ` <div id="content">
-    <div><img id="cart" src="./img/cart.png" alt=""></div>
+    <div><img onclick="addToCart('Burger')" id="cart" src="./img/cart.png" alt=""></div>
     <div>
     
             <h2>${myFood[i].name}</h2>
@@ -8,7 +8,6 @@ function getFoodTemplates(i) {
            <p>${myFood[i].description}</p>
            </div>
         </div>
-        
         
         `
 }
