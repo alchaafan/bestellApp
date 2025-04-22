@@ -11,3 +11,7 @@ function getFoodTemplates(i) {
         
         `
 }
+
+function addToCartTemplates(i) {
+    return `<div id="cartList"><li>${myFood[i].name}</li></div>`
+}
