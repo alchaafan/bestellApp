@@ -1,6 +1,6 @@
 function getFoodTemplates(i) {
     return ` <div id="content">
-    <div><img onclick="addToCart('Burger')" id="cart" src="./img/cart.png" alt=""></div>
+    <div><img onclick="addToCart(${i})" id="cart" src="./img/cart.png" alt=""></div>
     <div>
     
             <h2>${myFood[i].name}</h2>

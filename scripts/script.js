@@ -11,7 +11,7 @@ function warenkorb() {
 }
 warenkorb()
 
-function addToCart(item) {
+function addToCart(i) {
     let cartRef = document.getElementById('warenkorb');
-    cartRef.innerHTML += `<li>${item}</li>`
+    cartRef.innerHTML += `<br><li>${myFood[i].name}</li>`
 }
