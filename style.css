@@ -13,9 +13,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    
 }
 
-
+#warenkorb {
+    z-index: 10;
+    width: 400px;
+    background-color: white;
+    height: 100vh;
+    position: absolute;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    
+}
+#carts {
+    width: 75px;
+    height: 75px;
+}
 
 header {
     background-color: orange;
@@ -32,7 +47,8 @@ img {
 }
 
 #content {
-    top: 50px;
+    width: 60%;
+    top: 80px;
     background-color: white;
     padding: 20px;
   display: flex;
@@ -48,3 +64,4 @@ img {
     background-color: #c57f15;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
+

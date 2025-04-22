@@ -26,6 +26,6 @@ let myFood = [
     {
         "name": "Pommis",
         "price": 5.99,
-        "description": "leckerer Pommis mit Salz"
+        "description": "leckere Pommis mit Salz"
     }
 ]
