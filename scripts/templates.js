@@ -12,12 +12,6 @@ function getFoodTemplates(i) {
         `
 }
 
-// function addToCartTemplates(i) {
-//     return `<div id="cartList"><li>${myFood[i].name}${myFood[i].price} €</li>
-//     <img id="delete" src="./img/delete.png" alt="">
-//     </div>`
-// }
-
 
 function addToCartTemplates(i) {
     return `<div id="cartList">

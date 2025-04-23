@@ -33,7 +33,18 @@ body {
     height: 75px;
    
 }
+#cartList {
+    border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+#cartList:hover{
+    background-color: #ded2bf;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
 #buttonsContainer{
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
 }

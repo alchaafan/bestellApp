@@ -18,7 +18,7 @@ function addToCart(i) {
     
 }
 
-let cartCounts = {}; // Speichert die Anzahl pro Artikel
+let cartCounts = {};
 
 function increaseCount(i) {
     if (!cartCounts[i]) cartCounts[i] = 1;
