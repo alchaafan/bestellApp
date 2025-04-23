@@ -33,7 +33,14 @@ body {
     height: 75px;
    
 }
-
+#delete {
+    width: 25px;
+    height: 25px;
+}
+.plusminus{
+    width: 25px;
+    height: 25px;
+}
 
 header {
     background-color: orange;

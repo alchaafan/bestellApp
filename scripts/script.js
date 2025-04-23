@@ -17,3 +17,19 @@ function addToCart(i) {
     cartRef.innerHTML += addToCartTemplates(i);
     
 }
+
+let cartCounts = {}; // Speichert die Anzahl pro Artikel
+
+function increaseCount(i) {
+    if (!cartCounts[i]) cartCounts[i] = 1;
+    cartCounts[i]++;
+    document.getElementById(`count${i}`).innerText = cartCounts[i];
+}
+
+function decreaseCount(i) {
+    if (cartCounts[i] > 1) {
+        cartCounts[i]--;
+        document.getElementById(`count${i}`).innerText = cartCounts[i];
+    }
+}
+
