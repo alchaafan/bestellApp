@@ -33,12 +33,13 @@ body {
     height: 75px;
    
 }
-#cartList {
+.cartList {
     border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 15px;
+  width: 300px;
 }
-#cartList:hover{
+.cartList:hover{
     background-color: #ded2bf;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
@@ -48,7 +49,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-#delete {
+.deleteBtn {
     width: 25px;
     height: 25px;
 }

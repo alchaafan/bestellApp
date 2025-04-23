@@ -33,3 +33,10 @@ function decreaseCount(i) {
     }
 }
 
+function removeFromCart(i) {
+    let cartItemRef = document.getElementById(`cartItem${i}`);
+    if(cartItemRef) {
+        cartItemRef.remove();
+        delete cartCounts[i]
+    }
+}

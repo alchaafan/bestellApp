@@ -14,7 +14,7 @@ function getFoodTemplates(i) {
 
 
 function addToCartTemplates(i) {
-    return `<div id="cartList">
+    return `<div id="cartItem${i}" class="cartList">
         <li>${myFood[i].name} ${myFood[i].price} € - 
         
         </li>
@@ -24,7 +24,7 @@ function addToCartTemplates(i) {
         <span id="count${i}">1</span>
         <img  onclick="decreaseCount(${i})" class="plusminus" src="./img/minus.png" alt="">
         </div>
-        <img " id="delete" src="./img/delete.png" alt="">
+        <img " id="delete${i}" class="deleteBtn" src="./img/delete.png" alt=""  onclick="removeFromCart(${i})">
         </div>
-    </div>`;
+    </div>`
 }
