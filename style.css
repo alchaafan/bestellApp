@@ -33,6 +33,10 @@ body {
     height: 75px;
    
 }
+#buttonsContainer{
+    display: flex;
+    justify-content: space-between;
+}
 #delete {
     width: 25px;
     height: 25px;
