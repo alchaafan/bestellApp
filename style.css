@@ -15,8 +15,27 @@ body {
     margin: 0;
     
 }
+#content {
+    width: 60%;
+    top: 80px;
+    background-color: white;
+    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+   
+}
 
-#warenkorb {
+#content:hover {
+    background-color: #c57f15;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+#cartContainer {
     z-index: 10;
     width: 400px;
     background-color: white;
@@ -50,10 +69,12 @@ body {
     justify-content: space-between;
 }
 .deleteBtn {
+    cursor: pointer;
     width: 25px;
     height: 25px;
 }
 .plusminus{
+    cursor: pointer;
     width: 25px;
     height: 25px;
 }
@@ -69,25 +90,7 @@ img {
     
 }
 #cart {
+    cursor: pointer;
     width: 50px;
-}
-
-#content {
-    width: 60%;
-    top: 80px;
-    background-color: white;
-    padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-
-   
-}
-
-#content:hover {
-    background-color: #c57f15;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 

@@ -5,38 +5,42 @@ function init() {
     }
 }
 
-function warenkorb() {
-    let warenkorbRef = document.getElementById('menuContainer');
-    warenkorbRef.innerHTML +=`<div id="warenkorb"><img id="carts" src="./img/carts.png" alt=""></div>`
-}
-warenkorb()
+function renderCart() {
+    let cartRef = document.getElementById('cartContainer');
 
-function addToCart(i) {
-    let cartRef = document.getElementById('warenkorb');
- 
-    cartRef.innerHTML += addToCartTemplates(i);
-    
-}
+    cartRef.innerHTML = `<img src="./img/carts.png" alt="">`;
 
-let cartCounts = {};
-
-function increaseCount(i) {
-    if (!cartCounts[i]) cartCounts[i] = 1;
-    cartCounts[i]++;
-    document.getElementById(`count${i}`).innerText = cartCounts[i];
-}
-
-function decreaseCount(i) {
-    if (cartCounts[i] > 1) {
-        cartCounts[i]--;
-        document.getElementById(`count${i}`).innerText = cartCounts[i];
+    for(let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        cartRef.innerHTML += `
+        <div>
+        
+        <h2>${item.name}</h2>
+        <p>${item.price}</p>
+         <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
+        
+        
+        </div>
+        
+        `
     }
+  
 }
+
+
+
+
 
 function removeFromCart(i) {
-    let cartItemRef = document.getElementById(`cartItem${i}`);
-    if(cartItemRef) {
-        cartItemRef.remove();
-        delete cartCounts[i]
-    }
+    cart.splice(i, 1);
+    renderCart();
 }
+renderCart();
+
+
+function addToCart(i) {
+    let FoodItem = myFood[i]
+    cart.push(FoodItem);
+    renderCart();
+}
+

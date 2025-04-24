@@ -29,3 +29,5 @@ let myFood = [
         "description": "leckere Pommis mit Salz"
     }
 ]
+
+let cart = [];
