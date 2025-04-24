@@ -13,11 +13,17 @@ function renderCart() {
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
         cartRef.innerHTML += `
-        <div>
+        <div class ="cartList">
         
         <h2>${item.name}</h2>
-        <p>${item.price}</p>
+        <p>${item.price} €</p>
+        
+        <div id="buttonsContainer">
+         <img onclick ="increaseQuantity(${i})" src="./img/plus.png" alt="" class ="plusminus">
+         <p>Menge: ${item.quantity}</p>
+        <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
+         </div>
         
         
         </div>
@@ -26,9 +32,6 @@ function renderCart() {
     }
   
 }
-
-
-
 
 
 function removeFromCart(i) {
@@ -40,7 +43,29 @@ renderCart();
 
 function addToCart(i) {
     let FoodItem = myFood[i]
-    cart.push(FoodItem);
+    let existingItem = cart.find(item=> item.id == FoodItem.id);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({... FoodItem, quantity: 1})
+    }
+   
     renderCart();
 }
 
+
+function increaseQuantity(i) {
+    
+    cart[i].quantity++;
+    renderCart();
+}
+
+function decreaseQuantity(i) {
+    if(cart[i].quantity > 1) {
+        cart[i].quantity--;
+    } else {
+        cart.splice(i, 1);
+    }
+    renderCart();
+}
