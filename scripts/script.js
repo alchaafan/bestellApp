@@ -8,11 +8,11 @@ function init() {
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
-    let html = `<img src="./img/carts.png" alt="">`;
+    let html = ``;
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
-        html += `
+        html += ` <div id="waren">
         <div id="cart-item${i}" class ="cartList">
         <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
@@ -26,6 +26,7 @@ function renderCart() {
           
         
         
+        </div>
         </div>
         
         `

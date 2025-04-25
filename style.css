@@ -17,7 +17,6 @@ body {
 }
 
 
-
 #logo {
     display: flex;
     border-radius: 50px;
@@ -27,6 +26,7 @@ body {
     position: absolute;
     left: 40%;
 }
+
 #content {
     width: 60%;
     top: 80px;
@@ -48,23 +48,31 @@ body {
 
 
 #cartContainer {
-    z-index: 10;
+   
     width: 400px;
     background-color: white;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     right: 0px;
-    display: flex;
+    top: 0px;
     flex-direction: column;
     align-items: center;
-    
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+
+ 
 }
+
 #carts {
     width: 75px;
     height: 75px;
+    
    
 }
 .cartList {
+   
+   background-color: white;
     border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 15px;
