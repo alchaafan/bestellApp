@@ -91,6 +91,25 @@ body {
     height: 25px;
 }
 
+#gesamtsumme {
+    border: 1px solid #fd9104e1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#bestellen {
+    background-color: orange;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    
+}
+
+#bestellen:hover {
+    background-color: #61df61;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
 header {
     background-color: orange;
    padding-bottom: 50px;

@@ -46,7 +46,7 @@ renderCart();
 
 
 function addToCart(i) {
-    
+
     let FoodItem = myFood[i];
     let existingItem = cart.find(item=> item.id == FoodItem.id);
 
@@ -79,7 +79,18 @@ function decreaseQuantity(i) {
 function calcTotal() {
     let total = 0;
     for(let i = 0; i < cart.length; i++ ) {
-        total += cart[i].price * cart[i].quantity;
+        total += cart[i].price * cart[i].quantity +5;
     }
-    document.getElementById('totalContainer').innerText = `Gesamtsumme: ${total.toFixed(2)} €`;
+    document.getElementById('totalContainer').innerHTML = 
+    `
+    <p>Lieferkosten: 5.00 €</p>
+    <br>
+    <p id="gesamtsumme">Gesamtsumme: ${total.toFixed(2)} €</p><br> 
+    <button id="bestellen"<h2>JETZT BESTELLEN</h2></button>
+    `;
+}
+
+
+function orderNow() {
+    
 }
