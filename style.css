@@ -15,6 +15,18 @@ body {
     margin: 0;
     
 }
+
+
+
+#logo {
+    display: flex;
+    border-radius: 50px;
+    width: 200px;
+    height: 85px;
+    background-color: white;
+    position: absolute;
+    left: 40%;
+}
 #content {
     width: 60%;
     top: 80px;

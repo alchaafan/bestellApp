@@ -12,3 +12,4 @@ function getFoodTemplates(i) {
         
         `
 }
+

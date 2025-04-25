@@ -8,29 +8,33 @@ function init() {
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
-    cartRef.innerHTML = `<img src="./img/carts.png" alt="">`;
+    let html = `<img src="./img/carts.png" alt="">`;
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
-        cartRef.innerHTML += `
-        <div class ="cartList">
-        
-        <h2>${item.name}</h2>
+        html += `
+        <div id="cart-item${i}" class ="cartList">
+        <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
-        
+       
         <div id="buttonsContainer">
          <img onclick ="increaseQuantity(${i})" src="./img/plus.png" alt="" class ="plusminus">
          <p>Menge: ${item.quantity}</p>
         <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
          </div>
+          
         
         
         </div>
         
         `
     }
-  
+    html += `<div id="totalContainer">Gesamtsumme: 0.00 € </div>`
+
+    cartRef.innerHTML = html;
+    
+   calcTotal();
 }
 
 
@@ -42,7 +46,8 @@ renderCart();
 
 
 function addToCart(i) {
-    let FoodItem = myFood[i]
+    
+    let FoodItem = myFood[i];
     let existingItem = cart.find(item=> item.id == FoodItem.id);
 
     if (existingItem) {
@@ -68,4 +73,13 @@ function decreaseQuantity(i) {
         cart.splice(i, 1);
     }
     renderCart();
+}
+
+
+function calcTotal() {
+    let total = 0;
+    for(let i = 0; i < cart.length; i++ ) {
+        total += cart[i].price * cart[i].quantity;
+    }
+    document.getElementById('totalContainer').innerText = `Gesamtsumme: ${total.toFixed(2)} €`;
 }
