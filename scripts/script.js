@@ -8,7 +8,7 @@ function init() {
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
-    let html = ``;
+    let html = `<img src="./img/carts.png" alt="">`;
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
@@ -87,11 +87,16 @@ function calcTotal() {
     <p>Lieferkosten: 5.00 €</p>
     <br>
     <p id="gesamtsumme">Gesamtsumme: ${total.toFixed(2)} €</p><br> 
-    <button id="bestellen"<h2>JETZT BESTELLEN</h2></button>
+    <button onclick="orderNow()" id="bestellen"<h2>JETZT BESTELLEN</h2></button>
     `;
 }
 
 
 function orderNow() {
-    
+    let notifyRef = document.getElementById('notify');
+    notifyRef.style.display = "block";
+
+    setTimeout(() => {
+        notifyRef.style.display = "none"
+    }, 3000);
 }

@@ -113,6 +113,7 @@ body {
     
 }
 
+
 #bestellen:hover {
     background-color: #61df61;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
@@ -131,5 +132,23 @@ img {
 #cart {
     cursor: pointer;
     width: 50px;
+}
+
+#notify {
+    z-index: 10;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+
+}
+#pDanke{font-size: 14px;}
+
+.hidden {
+    display: none;
 }
 
