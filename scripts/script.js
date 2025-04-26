@@ -1,8 +1,11 @@
+
 function init() {
     let contentRef = document.getElementById('menuContainer');
     for(let i = 0; i < myFood.length; i++) {
         contentRef.innerHTML += getFoodTemplates(i);
     }
+    warenkorbBtn();
+    
 }
 
 function renderCart() {
@@ -28,8 +31,9 @@ function renderCart() {
         
         </div>
         </div>
-        
+       
         `
+        
     }
     html += `<div id="totalContainer">Gesamtsumme: 0.00 € </div>`
 
@@ -43,7 +47,7 @@ function removeFromCart(i) {
     cart.splice(i, 1);
     renderCart();
 }
-renderCart();
+renderCart(i);
 
 
 function addToCart(i) {
@@ -61,6 +65,7 @@ function addToCart(i) {
 }
 
 
+
 function increaseQuantity(i) {
     
     cart[i].quantity++;
@@ -75,6 +80,7 @@ function decreaseQuantity(i) {
     }
     renderCart();
 }
+
 
 
 function calcTotal() {
@@ -98,5 +104,12 @@ function orderNow() {
 
     setTimeout(() => {
         notifyRef.style.display = "none"
-    }, 3000);
+    }, 4000);
 }
+
+function warenkorbBtn() {
+    let btnRef = document.getElementById('btnContainer');
+    btnRef.innerHTML += `<button id="warenkorbBtn">Warenkorb</button>
+                        `
+    }
+    
