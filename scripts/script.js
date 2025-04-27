@@ -11,7 +11,9 @@ function init() {
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
-    let html = `<img src="./img/carts.png" alt="">`;
+    let html = `<img src="./img/carts.png" alt="">
+   `;
+    
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
@@ -25,11 +27,11 @@ function renderCart() {
          <p>Menge: ${item.quantity}</p>
         <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
-         </div>
           
-        
+         </div>
         
         </div>
+        
         </div>
        
         `
@@ -94,6 +96,7 @@ function calcTotal() {
     <br>
     <p id="gesamtsumme">Gesamtsumme: ${total.toFixed(2)} €</p><br> 
     <button onclick="orderNow()" id="bestellen"<h2>JETZT BESTELLEN</h2></button>
+      
     `;
 }
 
@@ -109,7 +112,21 @@ function orderNow() {
 
 function warenkorbBtn() {
     let btnRef = document.getElementById('btnContainer');
-    btnRef.innerHTML += `<button id="warenkorbBtn">Warenkorb</button>
-                        `
-    }
+    btnRef.innerHTML += `<button id="warenkorbBtn">Warenkorb</button>`;
+
+    document.getElementById('warenkorbBtn').addEventListener('click', toggleCart);
+}
     
+
+function toggleCart() {
+    let cartRef = document.getElementById('cartContainer');
+    cartRef.classList.toggle('fullScreenCart');
+    let closeRef = document.getElementById('cartContainer');
+    closeRef.innerHTML += ` <button onclick="toggleCart()" id="closeCart">Schließen</button>`
+
+    if (cartRef.classList.contains('fullScreenCart')) {
+        cartRef.style.display = "block";
+    } else {
+        cartRef.style.display = "none";
+    }
+}

@@ -16,6 +16,15 @@ body {
     
 }
 
+@media(max-width: 1000px) {
+    h2{
+        font-size: 16px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+
 
 #logo {
     display: flex;
@@ -25,6 +34,9 @@ body {
     background-color: white;
     position: absolute;
     left: 40%;
+    @media(max-width:1000px) {
+        left: 20%;
+    }
 }
 
 #content {
@@ -71,8 +83,8 @@ body {
     @media(max-width: 1000px) {
         display: none;
     }
- 
 }
+
 
 #carts {
     width: 75px;
@@ -142,9 +154,14 @@ img {
 #cart {
     cursor: pointer;
     width: 50px;
+    @media(max-width: 1000px) {
+        width: 30px;
+    }
 }
 
+
 #notify {
+   top: 0;
     right: 0px;
     z-index: 10;
     position: fixed;
@@ -152,12 +169,21 @@ img {
     color: white;
     width: 400px;
     height: 56%;
-    border-radius: 15px;
     display: none;
+    padding-top: 150px;
 
 }
 #pDanke{font-size: 44px;
-text-align: center;}
+text-align: center;
+}
+
+@media(max-width: 1000px) {
+ 
+    #pDanke{
+        font-size: 24px;
+        text-align: center;
+    }
+}
 
 .hidden {
     display: none;
@@ -191,18 +217,52 @@ text-align: center;}
     top: 0;
     left: 0;
     background-color: white;
-    z-index: 100;
+    z-index: 10;
     overflow-y: auto;
+}
+@media(min-width: 1000px) {
+    .fullScreenCart{
+        display: none;
+    }
+   
+}
+@media (max-width: 1000px) {
+    #cartContainer {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-y: auto;
+        position: fixed;
+    }
+
 }
 
 #closeCart {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(238, 14, 14, 0.692);
     color: white;
     padding: 10px;
     cursor: pointer;
+    display: none;
+
 }
+@media(max-width: 1000px) {
+    #closeCart{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+    }
+}
+
 
 
