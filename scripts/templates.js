@@ -5,7 +5,7 @@ function getFoodTemplates(i) {
     <div>
     
             <h2>${myFood[i].name}</h2>
-            <p>${myFood[i].price}</p>
+            <p>${myFood[i].price} €</p>
            <p>${myFood[i].description}</p>
            
            </div>

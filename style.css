@@ -43,9 +43,12 @@ body {
     background-image: url(./img/hintergrund.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    overflow-y: auto;
 }
 #content {
-    
+
+    overflow: auto;
     width: 60%;
     top: 80px;
     background-color: white;
@@ -56,7 +59,6 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 
-
 }
 
 @media(max-width: 1000px) {
@@ -66,6 +68,10 @@ body {
         flex-direction: column;
         align-items: center;
         height: auto;
+    }
+    p {
+        font-size: 15px;
+        text-align: center;
     }
 }
 
@@ -200,12 +206,14 @@ text-align: center;
 #btnContainer {
   
     padding: 10px;
-    position: absolute;
+    position: relative;
     bottom: 0px;
     width: 100%;
     display: none;
     @media(max-width: 1000px) {
         display: block;
+        position: relative;
+        bottom: 0px;
     }
 }
 
@@ -216,6 +224,9 @@ text-align: center;
     color: white;
     border: none;
     cursor: pointer;
+   position: fixed;
+   z-index: 10;
+   bottom: 0;
 }
 
 .fullScreenCart {
@@ -275,13 +286,15 @@ text-align: center;
 
 footer {
     position: absolute;
-    margin-bottom: 0;
     width: 100%;
     height: 66px;
     background-color: orange;
     display: flex;
     align-items: center;
     gap: 15px;
+    @media(max-width:1000px) {
+        display: none;
+    }
 }
 
 
