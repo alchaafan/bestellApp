@@ -7,7 +7,7 @@ function init() {
     warenkorbBtn();
     
 }
-
+let cart = [];
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
@@ -49,7 +49,7 @@ function removeFromCart(i) {
     cart.splice(i, 1);
     renderCart();
 }
-renderCart(i);
+renderCart();
 
 
 function addToCart(i) {
@@ -104,6 +104,8 @@ function calcTotal() {
 function orderNow() {
     let notifyRef = document.getElementById('notify');
     notifyRef.style.display = "block";
+    cart = [];
+    renderCart();
 
     setTimeout(() => {
         notifyRef.style.display = "none"
