@@ -15,3 +15,24 @@ function getFoodTemplates(i) {
         `
         
 }
+
+function getRenderCart() {
+        return ` <div id="waren">
+        <div id="cart-item${i}" class ="cartList">
+        <h2>${item.name}</h2> <br>
+        <p>${item.price} €</p>
+       
+        <div id="buttonsContainer">
+         <img onclick ="increaseQuantity(${i})" src="./img/plus.png" alt="" class ="plusminus">
+         <p>Menge: ${item.quantity}</p>
+        <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
+         <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
+          
+         </div>
+        
+        </div>
+        
+        </div>
+       
+        `
+}
