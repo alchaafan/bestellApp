@@ -1,24 +1,25 @@
 function getFoodTemplates(i) {
-    return ` <div id="content">
-    <div><img id="cart" src="./img/cart.png" alt="" onclick="addToCart(${i})">
-    </div>
-    <div>
+        return ` <div id="food">
+                         <div><img id="cart" src="./img/cart.png" alt="" onclick="addToCart(${i})"></div>
     
-            <h2>${myFood[i].name}</h2>
-            <p>${myFood[i].price} €</p>
-           <p>${myFood[i].description}</p>
+                        <div id="noodDetails">
+    
+                        <h2>${myFood[i].name}</h2>
+                        <p>${myFood[i].price} €</p>
+                        <p>${myFood[i].description}</p>
            
-           </div>
-        </div>
+                        </div>
+                 </div>
+                
         
         
         `
-        
+
 }
 
 function getRenderCart() {
         return ` <div id="waren">
-        <div id="cart-item${i}" class ="cartList">
+        <div id="cart-item${i}" >
         <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
        

@@ -5,12 +5,7 @@
     font-family: "Kanit", sans-serif;
     font-size: 20px;  
 }
-body {
-    
-    width: 100%;
-    margin: 0;
-    
-}
+
 
 @media(max-width: 1000px) {
     h2{
@@ -23,38 +18,25 @@ body {
 
 
 #logo {
-    display: flex;
-    top: 15px;
-    width: 200px;
-    height: 85px;
-    position: absolute;
-    left: 10%;
-    @media(max-width:1000px) {
-        left: 50%;
-        width: 150px;
-        height: 70px;
-    }
+    
+  display: flex;
+  justify-content: center;
 }
 #menuContainer {
-   
+    width: calc(100 - 300px);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
   
-   
 }
-#content {
 
-    overflow: auto;
-    width: 60%;
-    top: 80px;
+
+#content {
+   width: calc(100% - 300px);
     background-color: white;
     padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  border: 1px solid #ccc;
   border-radius: 5px;
-
+  
 }
 
 @media(max-width: 1000px) {
@@ -71,41 +53,43 @@ body {
     }
 }
 
-#content:hover {
-    background-color: #c57f15;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+
+#cartBig {
+    flex-grow: 1;
+    width: 300px;
 }
 
 #cartContainer {
-   
-    width: 400px;
+    top: 0;
+    position: sticky;
+    height: 400px;
+    width: 100%;
     background-color: white;
-   
-    position: fixed;
-    right: 0px;
-    top: 0px;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    overflow-y: auto;
-    display: flex;
+    
+}
 
-    @media(max-width: 1000px) {
-        display: none;
-    }
+#food {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    border: 5px solid #f1f1ea;
+    padding: 16px;
+}
+
+#food:hover {
+        background-color: #c57f15;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 
 #carts {
     width: 75px;
     height: 75px;
-    
-   
 }
 .cartList {
-   
    background-color: white;
-    border: 1px solid #ccc;
+    border: 5px solid #ccc;
   border-radius: 5px;
   margin-bottom: 15px;
   width: 300px;
@@ -126,7 +110,13 @@ left: 4%;
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
+    @media(max-width:1000px) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 .deleteBtn {
     cursor: pointer;
@@ -169,8 +159,7 @@ left: 4%;
 
 header {
     background-color: orange;
-   padding-bottom: 50px;
-     
+   width: 100%;  
 }
 
 img {
@@ -184,7 +173,6 @@ img {
         width: 30px;
     }
 }
-
 
 #notify {
    top: 0;
@@ -200,9 +188,7 @@ img {
     @media(max-width:1000px) {
         position: relative;
         width: auto;
-        padding-bottom: 50px;
-        
-        
+        padding-bottom: 50px;        
     }
 
 }
@@ -211,18 +197,14 @@ text-align: center;
 @media(max-width:1000px) {
     font-size: 26px;
     text-align: center;
-
 }
 }
-
-
 
 .hidden {
     display: none;
 }
 
-#btnContainer {
-  
+#btnContainer {  
     padding: 10px;
     position: relative;
     bottom: 0px;
@@ -243,15 +225,14 @@ text-align: center;
     color: white;
     border: none;
     cursor: pointer;
-   position: fixed;
+  
    z-index: 10;
-   bottom: 0;
+  
 }
 
 .fullScreenCart {
     width: 100%;
    height: 100%;
- 
     background-color: white;
     z-index: 10;
     
@@ -259,15 +240,17 @@ text-align: center;
 @media(min-width: 1000px) {
     .fullScreenCart{
         display: none;
+        
     }
    
 }
 @media (max-width: 1000px) {
     #cartContainer {
+        height: 100%;
+        position: fixed;
+        top: 0;
         display: none;
         width: 100%;
-        
-       
         background-color: white;
         overflow-y: auto;
        
@@ -300,9 +283,8 @@ text-align: center;
 }
 
 
-footer {
-
-   
+footer {   
+  
     width: 100%;
     height: 66px;
     background-color: orange;

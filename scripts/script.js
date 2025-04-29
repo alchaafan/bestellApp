@@ -1,24 +1,25 @@
 
 function init() {
-    let contentRef = document.getElementById('menuContainer');
+    let contentRef = document.getElementById('content');
     for(let i = 0; i < myFood.length; i++) {
         contentRef.innerHTML += getFoodTemplates(i);
     }
     warenkorbBtn();
     
 }
+
+
 let cart = [];
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
     let html = `<img src="./img/carts.png" alt="">
    `;
-    
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
-        html += ` <div id="waren">
-        <div id="cart-item${i}" class ="cartList">
+        html += ` 
+        <div id="cart-item${i}">
         <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
        
@@ -28,15 +29,14 @@ function renderCart() {
         <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
           
-         </div>
+         
         
         </div>
         
         </div>
        
         `
-        
-    }
+        }
     html += `<div id="totalContainer">Gesamtsumme: 0.00 € </div>`
 
     cartRef.innerHTML = html;
@@ -67,12 +67,12 @@ function addToCart(i) {
 }
 
 
-
 function increaseQuantity(i) {
     
     cart[i].quantity++;
     renderCart();
 }
+
 
 function decreaseQuantity(i) {
     if(cart[i].quantity > 1) {
@@ -82,7 +82,6 @@ function decreaseQuantity(i) {
     }
     renderCart();
 }
-
 
 
 function calcTotal() {
@@ -111,6 +110,7 @@ function orderNow() {
         notifyRef.style.display = "none"
     }, 4000);
 }
+
 
 function warenkorbBtn() {
     let btnRef = document.getElementById('btnContainer');
