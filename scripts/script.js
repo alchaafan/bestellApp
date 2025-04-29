@@ -19,7 +19,7 @@ function renderCart() {
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
         html += ` 
-        <div id="cart-item${i}">
+        <div id="cart-item${i}" class="ware">
         <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
        
@@ -113,7 +113,7 @@ function orderNow() {
 
 
 function warenkorbBtn() {
-    let btnRef = document.getElementById('btnContainer');
+    let btnRef = document.getElementById('content');
     btnRef.innerHTML += `<button id="warenkorbBtn">Warenkorb</button>`;
 
     document.getElementById('warenkorbBtn').addEventListener('click', toggleCart);

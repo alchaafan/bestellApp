@@ -18,8 +18,9 @@ function getFoodTemplates(i) {
 }
 
 function getRenderCart() {
-        return ` <div id="waren">
-        <div id="cart-item${i}" >
+        return ` 
+        <div id="waren">
+        <div id="cart-item${i}" class="ware" >
         <h2>${item.name}</h2> <br>
         <p>${item.price} €</p>
        
@@ -28,10 +29,10 @@ function getRenderCart() {
          <p>Menge: ${item.quantity}</p>
         <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
-          
-         </div>
+          </div>
+         
         
-        </div>
+        
         
         </div>
        
