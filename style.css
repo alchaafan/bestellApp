@@ -80,7 +80,7 @@ h2 {
     height: 400px;
     width: 100%;
     background-color: white;
-    
+    display: block;
     @media(max-width:1000px) {
         position: absolute;
         width: auto;

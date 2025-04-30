@@ -18,22 +18,7 @@ function renderCart() {
 
     for(let i = 0; i < cart.length; i++) {
         let item = cart[i];
-        html += ` 
-        <div id="cart-item${i}" class="ware">
-        <h2>${item.name}</h2> <br>
-        <p>${item.price} €</p>
-       
-        <div id="buttonsContainer">
-         <img onclick ="increaseQuantity(${i})" src="./img/plus.png" alt="" class ="plusminus">
-         <p>Menge: ${item.quantity}</p>
-        <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
-         <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
-          
-        </div>
-        
-        </div>
-       
-        `
+        html += getRenderCart(item, i);
         }
     html += `<div id="totalContainer">Gesamtsumme: 0.00 € </div>`
 
@@ -66,10 +51,12 @@ function addToCart(i) {
 
 
 function increaseQuantity(i) {
-    
     cart[i].quantity++;
-    renderCart();
+    document.getElementById(`quantity-${i}`).innerText = `Menge: ${cart[i].quantity}`;
+    calcTotal(); 
 }
+
+
 
 
 function decreaseQuantity(i) {
