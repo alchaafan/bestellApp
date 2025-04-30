@@ -13,7 +13,7 @@ let cart = [];
 function renderCart() {
     let cartRef = document.getElementById('cartContainer');
 
-    let html = `<img src="./img/carts.png" alt="">
+    let html = `<button onclick="toggleCart()" id="closeCart">Schließen</button><img src="./img/carts.png" alt="">
    `;
 
     for(let i = 0; i < cart.length; i++) {
@@ -29,8 +29,6 @@ function renderCart() {
         <img  onclick ="decreaseQuantity(${i})"src="./img/minus.png" alt="" class ="plusminus">
          <img class="deleteBtn" src="./img/delete.png" alt="" onclick="removeFromCart(${i})">
           
-         
-        
         </div>
         
         </div>
@@ -86,18 +84,19 @@ function decreaseQuantity(i) {
 
 function calcTotal() {
     let total = 0;
-    for(let i = 0; i < cart.length; i++ ) {
-        total += cart[i].price * cart[i].quantity +5;
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].quantity;
     }
-    document.getElementById('totalContainer').innerHTML = 
-    `
-    <p>Lieferkosten: 5.00 €</p>
-    <br>
-    <p id="gesamtsumme">Gesamtsumme: ${total.toFixed(2)} €</p><br> 
-    <button onclick="orderNow()" id="bestellen"<h2>JETZT BESTELLEN</h2></button>
-      
+
+    let disabledAttr = cart.length === 0 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : '';
+
+    document.getElementById('totalContainer').innerHTML = `
+        <br>
+        <p id="gesamtsumme">Gesamtsumme: ${total.toFixed(2)} €</p><br> 
+        <button onclick="orderNow()" id="bestellen" ${disabledAttr}><h2>JETZT BESTELLEN</h2></button>
     `;
 }
+
 
 
 function orderNow() {
@@ -123,9 +122,7 @@ function warenkorbBtn() {
 function toggleCart() {
     let cartRef = document.getElementById('cartContainer');
     cartRef.classList.toggle('fullScreenCart');
-    let closeRef = document.getElementById('cartContainer');
-    closeRef.innerHTML += ` <button onclick="toggleCart()" id="closeCart">Schließen</button>`
-
+   
     if (cartRef.classList.contains('fullScreenCart')) {
         cartRef.style.display = "block";
     } else {
